@@ -57,27 +57,27 @@ pobi,crong,honux
 
 실행 결과
 
-pobi:-
-crong:
-honux:-
+pobi : -
+crong : 
+honux : -
 
-pobi:--
-crong:-
-honux:--
+pobi : --
+crong : -
+honux : --
 
-pobi:---
-crong:--
-honux:---
+pobi : ---
+crong : --
+honux : ---
 
-pobi:----
-crong:---
-honux:----
+pobi : ----
+crong : ---
+honux : ----
 
-pobi:-----
-crong:----
-honux:-----
+pobi : -----
+crong : ----
+honux : -----
 
-최종 우승자:pobi,honux
+최종 우승자: pobi,honux
 ```
 
 ## 🐯 Task
