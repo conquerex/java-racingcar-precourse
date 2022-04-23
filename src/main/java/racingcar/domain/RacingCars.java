@@ -12,4 +12,15 @@ public class RacingCars {
         this.cars = cars;
     }
 
+    public int getCarsCount() {
+        return cars.size();
+    }
+
+    public Car getCar(int index) {
+        return cars.get(index);
+    }
+
+    public String getCarName(int index) {
+        return cars.get(index).getCarName().getName();
+    }
 }

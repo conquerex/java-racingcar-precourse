@@ -12,10 +12,6 @@ public class CarName {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     private void validateName(String name) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("name is empty");

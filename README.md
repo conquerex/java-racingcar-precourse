@@ -57,27 +57,27 @@ pobi,crong,honux
 
 실행 결과
 
-pobi:-
-crong:
-honux:-
+pobi : -
+crong : 
+honux : -
 
-pobi:--
-crong:-
-honux:--
+pobi : --
+crong : -
+honux : --
 
-pobi:---
-crong:--
-honux:---
+pobi : ---
+crong : --
+honux : ---
 
-pobi:----
-crong:---
-honux:----
+pobi : ----
+crong : ---
+honux : ----
 
-pobi:-----
-crong:----
-honux:-----
+pobi : -----
+crong : ----
+honux : -----
 
-최종 우승자:pobi,honux
+최종 우승자: pobi,honux
 ```
 
 ## 🐯 Task
@@ -90,3 +90,7 @@ honux:-----
 * **branch : step1/model**
   * car, race 모델 생성
   * 생성에 제약이 걸리는 validate code
+* **branch : step2/view**
+  * 레이싱 전 필요한 값을 주입하기 위한 ReadyView
+  * 레이싱 중계와 우승자를 보여주기 위한 StartView
+  

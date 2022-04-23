@@ -6,4 +6,9 @@ public class RacingRound {
     public RacingRound(int racingRound) {
         this.racingRound = racingRound;
     }
+
+    public int getRacingRound() {
+        return racingRound;
+    }
+
 }

@@ -13,15 +13,8 @@ public class Car {
         return carName;
     }
 
-    public CarPosition getCarPosition() {
-        return carPosition;
+    public int getCountByCarPosition() {
+        return carPosition.getPosition();
     }
 
-    public void setCarName(CarName carName) {
-        this.carName = carName;
-    }
-
-    public void setCarPosition(CarPosition carPosition) {
-        this.carPosition = carPosition;
-    }
 }
