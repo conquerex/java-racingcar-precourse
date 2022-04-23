@@ -8,4 +8,13 @@ public class RacingGame {
         this.racingCars = racingCars;
         this.racingRound = racingRound;
     }
+
+    public RacingCars getRacingCars() {
+        return racingCars;
+    }
+
+    public int getRacingRound() {
+        return racingRound.getRacingRound();
+    }
+
 }
