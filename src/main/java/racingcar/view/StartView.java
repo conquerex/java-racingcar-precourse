@@ -4,6 +4,8 @@ import racingcar.domain.RacingCars;
 import racingcar.domain.RacingGame;
 import racingcar.domain.car.Car;
 
+import java.util.List;
+
 public class StartView {
 
     private static final String MESSAGE_EXCUTE_RESULT = "\n실행 결과\n";
@@ -16,6 +18,7 @@ public class StartView {
             showRacingRound(racingGame.getRacingCars());
             System.out.println(); // 한줄 띄움
         }
+        showWinner(racingGame.getRacingCars());
     }
 
     private void showRacingRound(RacingCars racingCars) {
@@ -35,8 +38,8 @@ public class StartView {
         return sb.toString();
     }
 
-    private void showWinner(RacingCars winnerNameBulk) {
-        System.out.println(MESSAGE_WINNER + winnerNameBulk);
+    private void showWinner(RacingCars racingCars) {
+        System.out.println(MESSAGE_WINNER + racingCars.getWinnerCarName());
     }
 
 }
