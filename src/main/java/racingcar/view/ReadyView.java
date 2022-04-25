@@ -1,51 +1,53 @@
 package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import racingcar.constant.ErrorConstant;
+import racingcar.constant.RacingConstant;
+import racingcar.domain.RacingRound;
 import racingcar.domain.car.CarName;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadyView {
-    private static final String COMMA = ",";
-    private static final String MESSAGE_INPUT_CAR_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
-    private static final String MESSAGE_INPUT_CAR_ROUND = "시도할 회수는 몇회인가요?";
-    private static final String REG_EXP_IS_NUMBER = "^[0-9]+$";
+
 
 
     public List<CarName> createCarNames() {
-        System.out.println(MESSAGE_INPUT_CAR_NAME);
+        System.out.println(RacingConstant.MESSAGE_INPUT_CAR_NAME);
         String nameBulk = Console.readLine();
-        String[] names = nameBulk.split(COMMA);
+        String[] names = nameBulk.split(RacingConstant.COMMA);
         return generateCarNameArrayToList(names);
     }
 
     private List<CarName> generateCarNameArrayToList(String[] names) {
         List<CarName> carNames = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
-            carNames.add(new CarName(names[i]));
+//            carNames.add(new CarName(names[i]));
+            carNames.add(CarName.from(names[i]));
         }
         return carNames;
     }
 
-    public int createRacingRound() {
-        System.out.println(MESSAGE_INPUT_CAR_ROUND);
+    public RacingRound createRacingRound() {
+        System.out.println(RacingConstant.MESSAGE_INPUT_CAR_ROUND);
         String round = Console.readLine();
         return generateRacingRoundStringToInt(round);
     }
 
-    public int generateRacingRoundStringToInt(String roundString) {
+    public RacingRound generateRacingRoundStringToInt(String roundString) {
         validateRacingRound(roundString);
-        return Integer.parseInt(roundString);
+        RacingRound racingRound = new RacingRound(Integer.parseInt(roundString));
+        return racingRound;
     }
 
     public void validateRacingRound(String roundString) {
         if (roundString == null || roundString.isEmpty()) {
-            throw new IllegalArgumentException("시도할 회수를 입력하세요.");
+            throw new IllegalArgumentException(ErrorConstant.ERROR_ROUND_IS_NOT_EMPTY);
         }
 
-        if (!roundString.matches(REG_EXP_IS_NUMBER)) {
-            throw new IllegalArgumentException("시도할 회수는 숫자로만 입력해주세요.");
+        if (!roundString.matches(RacingConstant.REG_EXP_IS_NUMBER)) {
+            throw new IllegalArgumentException(ErrorConstant.ERROR_ONLY_NUMBER);
         }
     }
 }
