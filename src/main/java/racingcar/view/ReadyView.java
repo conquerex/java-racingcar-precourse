@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import racingcar.domain.RacingRound;
 import racingcar.domain.car.CarName;
 
 import java.util.ArrayList;
@@ -28,15 +29,16 @@ public class ReadyView {
         return carNames;
     }
 
-    public int createRacingRound() {
+    public RacingRound createRacingRound() {
         System.out.println(MESSAGE_INPUT_CAR_ROUND);
         String round = Console.readLine();
         return generateRacingRoundStringToInt(round);
     }
 
-    public int generateRacingRoundStringToInt(String roundString) {
+    public RacingRound generateRacingRoundStringToInt(String roundString) {
         validateRacingRound(roundString);
-        return Integer.parseInt(roundString);
+        RacingRound racingRound = new RacingRound(Integer.parseInt(roundString));
+        return racingRound;
     }
 
     public void validateRacingRound(String roundString) {

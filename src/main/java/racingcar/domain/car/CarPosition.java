@@ -7,7 +7,15 @@ public class CarPosition {
         this.position = position;
     }
 
+    public static CarPosition of(int i) {
+        return new CarPosition(i);
+    }
+
     public int getPosition() {
         return position;
+    }
+
+    public void move() {
+        position++;
     }
 }

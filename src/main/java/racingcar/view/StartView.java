@@ -6,10 +6,9 @@ import racingcar.domain.car.Car;
 
 public class StartView {
 
-    private static final String MESSAGE_EXCUTE_RESULT = "실행 결과\n";
+    private static final String MESSAGE_EXCUTE_RESULT = "\n실행 결과\n";
     private static final String MESSAGE_COLON = " : ";
     private static final String MESSAGE_WINNER = "최종 우승자: ";
-
 
     public void showRacingGame(RacingGame racingGame) {
         System.out.println(MESSAGE_EXCUTE_RESULT);
@@ -21,7 +20,9 @@ public class StartView {
 
     private void showRacingRound(RacingCars racingCars) {
         for (int i = 0; i < racingCars.getCarsCount(); i++) {
-            String carDash = getDashByCarPosition(racingCars.getCar(i));
+            Car car = racingCars.getCar(i);
+            car.move();
+            String carDash = getDashByCarPosition(car);
             System.out.println(racingCars.getCarName(i) + MESSAGE_COLON + carDash);
         }
     }

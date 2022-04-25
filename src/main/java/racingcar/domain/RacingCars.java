@@ -1,7 +1,9 @@
 package racingcar.domain;
 
 import racingcar.domain.car.Car;
+import racingcar.domain.car.CarName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RacingCars {
@@ -10,6 +12,14 @@ public class RacingCars {
 
     public RacingCars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public static RacingCars of(List<CarName> carNames) {
+        List<Car> cars = new ArrayList<>(carNames.size());
+        for (CarName carName : carNames) {
+            cars.add(Car.of(carName));
+        }
+        return new RacingCars(cars);
     }
 
     public int getCarsCount() {
