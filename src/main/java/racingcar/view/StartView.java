@@ -1,5 +1,6 @@
 package racingcar.view;
 
+import racingcar.constant.RacingConstant;
 import racingcar.domain.RacingCars;
 import racingcar.domain.RacingGame;
 import racingcar.domain.car.Car;
@@ -8,12 +9,10 @@ import java.util.List;
 
 public class StartView {
 
-    private static final String MESSAGE_EXCUTE_RESULT = "\n실행 결과\n";
-    private static final String MESSAGE_COLON = " : ";
-    private static final String MESSAGE_WINNER = "최종 우승자: ";
+
 
     public void showRacingGame(RacingGame racingGame) {
-        System.out.println(MESSAGE_EXCUTE_RESULT);
+        System.out.println(RacingConstant.MESSAGE_EXCUTE_RESULT);
         for (int i = 0; i < racingGame.getRacingRound(); i++) {
             showRacingRound(racingGame.getRacingCars());
             System.out.println(); // 한줄 띄움
@@ -26,7 +25,7 @@ public class StartView {
             Car car = racingCars.getCar(i);
             car.move();
             String carDash = getDashByCarPosition(car);
-            System.out.println(racingCars.getCarName(i) + MESSAGE_COLON + carDash);
+            System.out.println(racingCars.getCarName(i) + RacingConstant.MESSAGE_COLON + carDash);
         }
     }
 
@@ -39,7 +38,7 @@ public class StartView {
     }
 
     private void showWinner(RacingCars racingCars) {
-        System.out.println(MESSAGE_WINNER + racingCars.getWinnerCarName());
+        System.out.println(RacingConstant.MESSAGE_WINNER + racingCars.getWinnerCarName());
     }
 
 }
